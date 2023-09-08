@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>SOMATÇI - CHEF Fatih Mehmet</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="HandheldFriendly" content="true">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+	
+	<!-- BEGIN CSS STYLES -->
+	<link rel="stylesheet" href="~/styles/bootstrap.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/fonts/font-awesome/css/font-awesome.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/fonts/font-awesome/css/line-awesome.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/styles/animate.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/styles/magnific-popup.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/styles/splitting.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/styles/swiper.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/style.css" type="text/css" media="all" />
+	<!-- END CSS STYLES -->
+	<style>
+		body{
+			overflow-x: hidden;
+		}
+.mfp-close {
+    font-size: 48px !important; /* Adjust the font size as needed */
+    width: 80px !important; /* Adjust the width as needed */
+    height: 80px !important; /* Adjust the height as needed */
+    line-height: 40px !important; /* Vertically center the content */
+    padding: 0 !important; /* Remove any default padding */
+    background-color: transparent !important; /* Remove any background color */
+    color: #ff0000 !important; /* Change the color of the close button */
+    position: fixed !important; /* Position the button as fixed */
+    top: 20px !important; /* Adjust the top position as needed */
+    right: 20px !important; /* Adjust the right position as needed */
+    z-index: 9999 !important; /* Make sure the button is on top of other content */
+}
+		.wrapper{
+			margin-bottom: -300px;
+		}
+		.swiper-navigation {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	
+		.swiper-button-prev,
+		.swiper-button-next {
+			width: 30px;
+			height: 30px;
+			background-color: #f0ecec;
+			color: #851515;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			margin: 10px 0;
+		}
+	</style>
+	<style>
+		#video-popup {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh; /* Center vertically on the viewport */
+		}
+	
+		#video-popup video {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		.section.kf-grid-carousel {
+    /* Your existing properties */
+    /* Add the following property to adjust the height */
+    height: 650px; /* Set the desired height value */
+}
+.centered-video {
+    display: block;
+    margin: 0 auto;
+}
+
+	</style>
+	<style>
+		
+		/* Modal Styles */
+		.modal {
+		  display: none;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  background-color: rgba(0, 0, 0, 0.7);
+		  justify-content: center;
+		  align-items: center;
+		  z-index: 9999;
+		}
+		.modal-content {
+		  background-color: transparent;
+		  padding: 40px;
+		  border-radius: 10px;
+		  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+		  max-width: 80%;
+		  width: 800px;
+		  position: relative;
+		}
+		.close-btn {
+		  position: absolute;
+		  top: 10px;
+		  right: 10px;
+		  color: white;
+		  cursor: pointer;
+		}
+		.modal-header {
+		  color: white;
+		}
+
+
+		.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-player {
+    width: 80%;
+    height: 100%;
+    background-color: rgba(133, 124, 124, 0.7); /* Add background color for opacity */
+}
+
+	  </style>
+</head>
+
+<body>
+	<div class="bg">
+
+		<!-- Preloader -->
+		<div class="preloader">
+			<div class="centrize full-width">
+				<div class="vertical-center">
+					<div class="spinner-logo">
+						<img src="images/logo.png" alt="" loading="lazy" />
+						<div class="spinner-dot">
+							<div class="spinner-line"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		@RenderBody()
+	<!-- Scripts -->
+		<script src="~/js/jquery.min.js"></script>
+	<script src="~/js/jquery.validate.min.js"></script>
+		<script src="~/js/bootstrap.js"></script>
+		<script src="~/js/swiper.js"></script>
+		<script src="~/js/splitting.js"></script>
+	<script src="~/js/jquery.paroller.min.js"></script>
+	<script src="~/js/parallax.js"></script>
+	<script src="~/js/magnific-popup.js"></script>
+	<script src="~/js/imagesloaded.pkgd.js"></script>
+	<script src="~/js/isotope.pkgd.js"></script>
+	<script src="~/js/jquery.scrolla.js"></script>
+	<script src="~/js/skrollr.js"></script>
+	<script src="~/js/common.js"></script>
+	<script>
+		const openModalButton = document.getElementById('openModal');
+		const closeModalButton = document.getElementById('closeModal');
+		const modal = document.getElementById('modal');
+	  
+		openModalButton.addEventListener('click', () => {
+		  modal.style.display = 'flex';
+		});
+	  
+		closeModalButton.addEventListener('click', () => {
+		  modal.style.display = 'none';
+		});
+	  
+		window.addEventListener('click', (event) => {
+		  if (event.target === modal) {
+			modal.style.display = 'none';
+		  }
+		});
+	  </script>
+<script>
+    var videoPlaying = false; // Flag to track video state
+	const videoLinks = document.querySelectorAll('.video-link');
+const popupContainer = document.querySelector('.popup-container');
+const videoPlayer = document.querySelector('.video-player');
+
+videoLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const videoUrl = this.getAttribute('data-video');
+        videoPlayer.src = videoUrl;
+		videoPlayer.muted = true;
+
+		videoPlayer.autoplay = true; // Add this line
+        popupContainer.style.display = 'block';
+    });
+});
+
+popupContainer.addEventListener('click', function () {
+    videoPlayer.src = '';
+    popupContainer.style.display = 'none';
+});
+
+
+
+	$(document).ready(function() {
+    $('.modal-trigger').on('click', function(e) {
+        e.preventDefault();
+        
+        // Open the modal
+        $.magnificPopup.open({
+            items: {
+                src: '#Language-Modal'
+            },
+            type: 'inline'
+        });
+    });
+});
+	$(document).ready(function() {
+    $('.modal-trigger-turkce').on('click', function(e) {
+        e.preventDefault();
+        
+        setTimeout(function() {
+            // Open the modal
+            $.magnificPopup.open({
+				type: 'inline',
+				fixedContentPos: true,
+				closeOnContentClick: true,
+				closeOnBgClick: true,
+                items: {
+                    src: '#Turkce-Menu-Modal'
+                },
+                type: 'inline'
+            });
+        }, 250); // Delay in milliseconds
+		const mevleviLink = document.getElementsByClassName('mevlevi')[0];
+
+// Simulate a click on the link
+		mevleviLink.click();
+    });
+});
+
+	$(document).ready(function() {
+    $('.modal-trigger-english').on('click', function(e) {
+        e.preventDefault();
+        
+        setTimeout(function() {
+            // Open the modal
+            $.magnificPopup.open({
+				type: 'inline',
+				fixedContentPos: true,
+				closeOnContentClick: true,
+				closeOnBgClick: true,
+                items: {
+                    src: '#English-Menu-Modal'
+                },
+                type: 'inline'
+            });
+        }, 250); // Delay in milliseconds
+
+    });
+});
+
+
+
+</script>
+
+<script>
+    // Initialize Swiper
+    var swiper = new Swiper('.slider-containerx', {
+        direction: 'vertical',
+        slidesPerView: 3,
+        spaceBetween: 5,
+		autoplay: {
+            delay: 3000, // Set auto-slide interval in milliseconds (5 seconds)
+            disableOnInteraction: false, // Allow user interaction to not disable autoplay
+        },
+		effect: 'fade', // Change the transition effect to "fade"
+		navigation: {
+            nextEl: '.swiper-button-next', // Selector for next arrow
+            prevEl: '.swiper-button-prev', // Selector for previous arrow
+        },
+        // Add other options as needed
+    });
+
+	const imageElement = document.getElementById('quoteImage');
+const imagesequence = ['2.png', '3.png', '4.png', '5.png']; // Add more filenames if needed
+let currentImageIndex = 0;
+
+function changeImage() {
+    imageElement.src = 'images/ozlu/' + imagesequence[currentImageIndex];
+    currentImageIndex = (currentImageIndex + 1) % imagesequence.length;
+}
+
+setInterval(changeImage, 5000); // Change image every 5 seconds
+
+
+</script>
+  </body>
+  </html>
+  
